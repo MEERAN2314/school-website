@@ -18,7 +18,7 @@ const ProgramCard = ({ title, ageGroup, description, icon: Icon }) => {
 
   return (
     <motion.div
-      className={`bg-white rounded-2xl shadow-md hover:shadow-2xl p-8 transition-all duration-300 border border-gray-100 border-l-[5px] relative overflow-hidden group ${gradientClass}`}
+      className={`bg-white rounded-2xl shadow-md hover:shadow-2xl p-8 transition-all duration-300 border border-gray-100 border-l-[5px] relative overflow-hidden group h-full flex flex-col ${gradientClass}`}
       whileHover={{ scale: 1.03, y: -5 }}
     >
       <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradientClass.split(' ')[0]} ${gradientClass.split(' ')[1]} opacity-10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:opacity-20 transition-all`} />
@@ -37,7 +37,7 @@ const ProgramCard = ({ title, ageGroup, description, icon: Icon }) => {
         </div>
       </div>
       
-      <p className="text-gray-600 font-medium mb-8 relative z-10 leading-relaxed">
+      <p className="text-gray-600 font-medium mb-8 relative z-10 leading-relaxed flex-grow">
         {description}
       </p>
       

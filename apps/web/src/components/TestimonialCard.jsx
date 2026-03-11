@@ -27,7 +27,7 @@ const TestimonialCard = ({ name, text, rating = 5, index = 0 }) => {
 
   return (
     <motion.div
-      className={`${bgColor} rounded-2xl shadow-md hover:shadow-xl p-8 transition-all duration-300 border border-white border-l-[6px] ${borderColor} relative`}
+      className={`${bgColor} rounded-2xl shadow-md hover:shadow-xl p-8 transition-all duration-300 border border-white border-l-[6px] ${borderColor} relative h-full flex flex-col`}
       whileHover={{ y: -8, scale: 1.02 }}
     >
       <Quote className="absolute top-6 right-6 w-12 h-12 text-gray-300 drop-shadow-sm opacity-50" />
@@ -38,7 +38,7 @@ const TestimonialCard = ({ name, text, rating = 5, index = 0 }) => {
         ))}
       </div>
       
-      <p className="text-gray-700 font-medium mb-6 text-lg leading-relaxed italic relative z-10">
+      <p className="text-gray-700 font-medium mb-6 text-lg leading-relaxed italic relative z-10 flex-grow">
         "{text}"
       </p>
       

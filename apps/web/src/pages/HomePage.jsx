@@ -7,7 +7,6 @@ import { BookOpen, Shield, Users, Palette, ArrowRight, Star } from 'lucide-react
 import { Button } from '@/components/ui/button.jsx';
 import TestimonialCard from '@/components/TestimonialCard.jsx';
 import ProgramCard from '@/components/ProgramCard.jsx';
-import EventCard from '@/components/EventCard.jsx';
 import ImageCard from '@/components/ImageCard.jsx';
 
 const HomePage = () => {
@@ -40,7 +39,7 @@ const HomePage = () => {
 
   const testimonials = [
     {
-      name: 'Priya Sharma',
+      name: 'Fathima',
       text: 'My daughter has blossomed at International Kidz World! The teachers are so caring and the Montessori approach has really helped her become more independent and confident.',
       rating: 5,
     },
@@ -50,7 +49,7 @@ const HomePage = () => {
       rating: 5,
     },
     {
-      name: 'Anitha Menon',
+      name: 'Sandeep',
       text: 'I love how the school focuses on individual development. My child looks forward to going to school every day. The curriculum is well-structured and engaging.',
       rating: 5,
     },
@@ -78,33 +77,9 @@ const HomePage = () => {
   ];
 
   const galleryImages = [
-    { src: 'https://images.unsplash.com/photo-1652407173066-6bca9753ffea', alt: 'Classroom Activities' },
-    { src: 'https://images.unsplash.com/photo-1596488711806-2d21fdbfe633', alt: 'Learning through play' },
-    { src: 'https://images.unsplash.com/photo-1693920615557-433759882d48', alt: 'Montessori materials' },
-  ];
-
-  const upcomingEvents = [
-    {
-      title: 'Annual Day Celebration',
-      date: 'March 15, 2026',
-      location: 'School Auditorium',
-      description: 'Join us for our grand annual day celebration featuring performances by our talented students!',
-      image: 'https://images.unsplash.com/photo-1652407173066-6bca9753ffea',
-    },
-    {
-      title: 'Sports Day',
-      date: 'April 5, 2026',
-      location: 'School Playground',
-      description: 'Fun-filled sports activities and games for all age groups. Come cheer for your little champions!',
-      image: 'https://images.unsplash.com/photo-1588075592446-265fd1e6e76f',
-    },
-    {
-      title: 'Cultural Celebrations',
-      date: 'Throughout the year',
-      location: 'School Campus',
-      description: 'Experience diverse cultural festivals including Pongal, Diwali, Christmas, and more!',
-      image: 'https://images.unsplash.com/photo-1697790698221-5e5712c82e92',
-    },
+    { src: '/assets/WhatsApp Image 2026-03-10 at 20.38.22.jpeg', alt: 'Classroom Activities' },
+    { src: '/assets/Nature activity da.jpeg', alt: 'Nature Activity Day' },
+    { src: '/assets/WhatsApp Image 2026-03-10 at 20.38.33.jpeg', alt: 'Montessori Learning' },
   ];
 
   return (
@@ -113,8 +88,66 @@ const HomePage = () => {
         <title>International Kidz World Montessori Play School - Best Montessori School in Adambakkam, Chennai</title>
         <meta
           name="description"
-          content="International Kidz World Montessori Play School in Adambakkam, Chennai offers quality early childhood education with Montessori method. Enroll your child in the best play school in Chennai."
+          content="International Kidz World Montessori Play School in Adambakkam, Chennai offers authentic Montessori education for children aged 1.5-4.5 years. Best play school with qualified teachers, safe environment, and holistic development programs. Enroll now!"
         />
+        <meta name="keywords" content="Montessori school Chennai, play school Adambakkam, best preschool Chennai, International Kidz World, early childhood education, Montessori method, kindergarten Chennai, nursery school Adambakkam, child development center" />
+        <meta name="author" content="International Kidz World Montessori Play School" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://internationalkidzworld.com/" />
+        <meta property="og:title" content="International Kidz World Montessori Play School - Best Montessori School in Chennai" />
+        <meta property="og:description" content="Authentic Montessori education for children aged 1.5-4.5 years in Adambakkam, Chennai. Safe environment, qualified teachers, and holistic development programs." />
+        <meta property="og:image" content="https://internationalkidzworld.com/og-image.jpg" />
+        <meta property="og:site_name" content="International Kidz World Montessori Play School" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://internationalkidzworld.com/" />
+        <meta property="twitter:title" content="International Kidz World Montessori Play School - Best Montessori School in Chennai" />
+        <meta property="twitter:description" content="Authentic Montessori education for children aged 1.5-4.5 years in Adambakkam, Chennai. Safe environment, qualified teachers, and holistic development programs." />
+        <meta property="twitter:image" content="https://internationalkidzworld.com/og-image.jpg" />
+        
+        {/* Local Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "School",
+            "name": "International Kidz World Montessori Play School",
+            "description": "Authentic Montessori education for children aged 1.5-4.5 years in Adambakkam, Chennai",
+            "url": "https://internationalkidzworld.com",
+            "telephone": "+91 98414 44842",
+            "email": "info@internationalkidzworld.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "No.135/112, Masthan Gori St, Balakrishnapuram",
+              "addressLocality": "Adambakkam",
+              "addressRegion": "Tamil Nadu",
+              "postalCode": "600088",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "12.990125187326928",
+              "longitude": "80.20005617625623"
+            },
+            "openingHours": [
+              "Mo-Fr 08:00-17:00",
+              "Sa 08:00-13:00"
+            ],
+            "priceRange": "$$",
+            "image": "https://internationalkidzworld.com/school-image.jpg",
+            "sameAs": [
+              "https://www.instagram.com/internationalkidzworld"
+            ]
+          })}
+        </script>
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://internationalkidzworld.com/" />
       </Helmet>
 
       <div className="min-h-screen pt-16">
@@ -287,83 +320,44 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Gallery & Events Section */}
+        {/* Gallery Section */}
         <section className="py-24 bg-veryLightBlue relative">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Gallery Preview */}
-              <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="w-24 h-1 bg-gradient-to-r from-hotPink to-brightOrange mx-auto mb-6 rounded-full"></div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                Joyful <span className="text-transparent bg-clip-text bg-gradient-to-r from-hotPink to-brightOrange">Moments</span>
+              </h2>
+              <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto">
+                Glimpses of learning and fun at our school - where every moment is a step towards growth
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {galleryImages.map((image, index) => (
                 <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="mb-10"
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <div className="w-16 h-1 bg-gradient-to-r from-hotPink to-brightOrange mb-4 rounded-full"></div>
-                  <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                    Joyful <span className="text-transparent bg-clip-text bg-gradient-to-r from-hotPink to-brightOrange">Moments</span>
-                  </h2>
-                  <p className="text-lg text-gray-600 font-medium">Glimpses of learning and fun at our school</p>
+                  <ImageCard {...image} />
                 </motion.div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {galleryImages.slice(0, 2).map((image, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <ImageCard {...image} />
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="mt-8">
-                  <Link to="/albums">
-                    <Button variant="outline" className="border-hotPink text-hotPink hover:bg-hotPink hover:text-white">
-                      View Full Gallery <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Events Preview */}
-              <div>
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className="mb-10"
-                >
-                  <div className="w-16 h-1 bg-gradient-to-r from-skyBlue to-vibrantPurple mb-4 rounded-full"></div>
-                  <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                    Upcoming <span className="text-transparent bg-clip-text bg-gradient-to-r from-skyBlue to-vibrantPurple">Events</span>
-                  </h2>
-                  <p className="text-lg text-gray-600 font-medium">Join us for exciting celebrations</p>
-                </motion.div>
-                
-                <div className="space-y-6">
-                  {upcomingEvents.slice(0, 2).map((event, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <EventCard {...event} />
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="mt-8">
-                  <Link to="/events">
-                    <Button variant="outline" className="border-vibrantPurple text-vibrantPurple hover:bg-vibrantPurple hover:text-white">
-                      View All Events <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+              ))}
+            </div>
+            
+            <div className="text-center">
+              <Link to="/albums">
+                <Button size="lg" className="bg-gradient-to-r from-hotPink to-brightOrange text-white hover:shadow-xl hover:scale-105 border-none text-lg px-8">
+                  View Full Gallery <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

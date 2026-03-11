@@ -8,7 +8,6 @@ import Footer from './components/Footer.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import CoursesPage from './pages/CoursesPage.jsx';
-import EventsPage from './pages/EventsPage.jsx';
 import AlbumsPage from './pages/AlbumsPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import { Toaster } from './components/ui/toaster.jsx';
@@ -29,7 +28,6 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/courses" element={<CoursesPage />} />
-            <Route path="/events" element={<EventsPage />} />
             <Route path="/albums" element={<AlbumsPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
