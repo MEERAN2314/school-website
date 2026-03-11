@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite --host :: --port 3000",
-		"build": "node tools/generate-llms.js || true && vite build --config vite.config.production.js",
+		"build": "node tools/generate-llms.js || true && vite build --config vite.config.production.js --outDir dist",
 		"build:hostinger": "npm run build",
 		"start": "vite preview --config vite.config.production.js --host :: --port 3000",
 		"lint": "eslint . --quiet",
