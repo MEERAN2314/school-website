@@ -74,11 +74,61 @@ const EventsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Events - International Kidz World Montessori Play School</title>
+        <title>School Events & Celebrations - International Kidz World Montessori Play School Chennai</title>
         <meta
           name="description"
-          content="Explore upcoming events and celebrations at International Kidz World Montessori Play School in Adambakkam, Chennai. Annual Day, Sports Day, Cultural Festivals and more."
+          content="Join exciting events and celebrations at International Kidz World Montessori Play School in Adambakkam, Chennai. Annual Day, Sports Day, Cultural Festivals, Pongal celebrations and more upcoming events for children and families."
         />
+        <meta name="keywords" content="school events Chennai, Montessori school celebrations, Annual Day Adambakkam, Sports Day preschool, cultural festivals Chennai, Pongal celebration school, children events Chennai, school activities Adambakkam" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://internationalkidzworld.com/events" />
+        <meta property="og:title" content="School Events & Celebrations - International Kidz World Montessori Play School" />
+        <meta property="og:description" content="Join exciting events at our Montessori school in Chennai - Annual Day, Sports Day, Cultural Festivals and more family-friendly celebrations." />
+        <meta property="og:image" content="https://internationalkidzworld.com/events-og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="School Events & Celebrations - International Kidz World Montessori Play School" />
+        <meta property="twitter:description" content="Join exciting events at our Montessori school in Chennai - Annual Day, Sports Day, Cultural Festivals and more family-friendly celebrations." />
+        
+        {/* Events Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EventSeries",
+            "name": "International Kidz World School Events",
+            "organizer": {
+              "@type": "School",
+              "name": "International Kidz World Montessori Play School",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "No.135/112, Masthan Gori St, Balakrishnapuram",
+                "addressLocality": "Adambakkam",
+                "addressRegion": "Tamil Nadu",
+                "postalCode": "600088",
+                "addressCountry": "IN"
+              }
+            },
+            "location": {
+              "@type": "Place",
+              "name": "International Kidz World Montessori Play School",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "No.135/112, Masthan Gori St, Balakrishnapuram",
+                "addressLocality": "Adambakkam",
+                "addressRegion": "Tamil Nadu",
+                "postalCode": "600088",
+                "addressCountry": "IN"
+              }
+            }
+          })}
+        </script>
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://internationalkidzworld.com/events" />
       </Helmet>
 
       <div className="min-h-screen pt-20">

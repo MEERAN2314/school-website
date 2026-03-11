@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const quickLinks = [
@@ -13,9 +13,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook', color: 'hover:bg-skyBlue' },
-    { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:bg-hotPink' },
-    { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:bg-skyBlue' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:bg-vibrantPurple' },
+    { icon: Instagram, href: 'https://www.instagram.com/internationalkidzworld?igsh=eTk3cDVnaWhmZXdz', label: 'Instagram', color: 'hover:bg-hotPink' },
   ];
 
   return (
@@ -81,7 +79,7 @@ const Footer = () => {
                 <div className="bg-white/10 p-2 rounded-lg group-hover:bg-freshLimeGreen transition-colors">
                   <Phone className="w-4 h-4 text-white transition-colors" />
                 </div>
-                <span className="text-white/90 font-medium">+91 98765 43210</span>
+                <span className="text-white/90 font-medium">+91 98414 44842</span>
               </li>
               <li className="flex items-center gap-3 group">
                 <div className="bg-white/10 p-2 rounded-lg group-hover:bg-skyBlue transition-colors">
@@ -103,6 +101,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className={`bg-white/10 shadow-md p-3 rounded-xl text-white ${social.color} hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
                 >

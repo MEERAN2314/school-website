@@ -135,11 +135,67 @@ const CoursesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Programs - International Kidz World Montessori Play School</title>
+        <title>Our Montessori Programs - Play Group, Pre-KG, LKG, UKG | International Kidz World Chennai</title>
         <meta
           name="description"
-          content="Explore our comprehensive Montessori programs including Play Group, Pre-KG, LKG, and UKG at International Kidz World in Adambakkam, Chennai."
+          content="Explore our comprehensive Montessori programs for children aged 1.5-5.5 years: Play Group, Pre-KG, LKG, and UKG at International Kidz World in Adambakkam, Chennai. Age-appropriate curriculum with qualified teachers."
         />
+        <meta name="keywords" content="Montessori programs Chennai, Play Group Adambakkam, Pre-KG Chennai, LKG UKG programs, early childhood curriculum, Montessori education levels, preschool programs Chennai, kindergarten Adambakkam" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://internationalkidzworld.com/courses" />
+        <meta property="og:title" content="Montessori Programs - Play Group, Pre-KG, LKG, UKG | International Kidz World" />
+        <meta property="og:description" content="Comprehensive Montessori programs for children aged 1.5-5.5 years with age-appropriate curriculum and qualified teachers in Chennai." />
+        <meta property="og:image" content="https://internationalkidzworld.com/programs-og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Montessori Programs - Play Group, Pre-KG, LKG, UKG | International Kidz World" />
+        <meta property="twitter:description" content="Comprehensive Montessori programs for children aged 1.5-5.5 years with age-appropriate curriculum and qualified teachers in Chennai." />
+        
+        {/* Educational Programs Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "International Kidz World Montessori Play School",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Montessori Programs",
+              "itemListElement": [
+                {
+                  "@type": "Course",
+                  "name": "Play Group",
+                  "description": "Introduction to social interaction and sensory exploration for children aged 1.5-2.5 years",
+                  "provider": "International Kidz World Montessori Play School"
+                },
+                {
+                  "@type": "Course", 
+                  "name": "Pre-KG",
+                  "description": "Building foundation skills through play and discovery for children aged 2.5-3.5 years",
+                  "provider": "International Kidz World Montessori Play School"
+                },
+                {
+                  "@type": "Course",
+                  "name": "LKG (Lower Kindergarten)",
+                  "description": "Developing language, math, and creative abilities for children aged 3.5-4.5 years", 
+                  "provider": "International Kidz World Montessori Play School"
+                },
+                {
+                  "@type": "Course",
+                  "name": "UKG (Upper Kindergarten)", 
+                  "description": "Preparing for primary school with advanced learning for children aged 4.5-5.5 years",
+                  "provider": "International Kidz World Montessori Play School"
+                }
+              ]
+            }
+          })}
+        </script>
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://internationalkidzworld.com/courses" />
       </Helmet>
 
       <div className="min-h-screen pt-20">

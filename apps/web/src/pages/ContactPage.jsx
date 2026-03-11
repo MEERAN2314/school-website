@@ -1,59 +1,10 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button.jsx';
-import { useToast } from '@/components/ui/use-toast.js';
 
 const ContactPage = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      toast({
-        title: "Error",
-        description: "Please fill in all fields",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-    const newSubmission = {
-      ...formData,
-      timestamp: new Date().toISOString(),
-    };
-    submissions.push(newSubmission);
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Thank you for contacting us. We'll get back to you soon!",
-    });
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
-  };
 
   const contactInfo = [
     {
@@ -65,7 +16,7 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'Phone',
-      content: '+91 98765 43210',
+      content: '+91 98414 44842',
       gradient: 'from-brightOrange to-sunnyYellow'
     },
     {
@@ -85,11 +36,54 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - International Kidz World Montessori Play School</title>
+        <title>Contact Us - International Kidz World Montessori Play School | Adambakkam, Chennai</title>
         <meta
           name="description"
-          content="Contact International Kidz World Montessori Play School in Adambakkam, Chennai. Visit us, call, or send a message for admissions and enquiries."
+          content="Contact International Kidz World Montessori Play School in Adambakkam, Chennai. Visit us, call +91 98414 44842, or WhatsApp for admissions and enquiries. Get directions to our school location."
         />
+        <meta name="keywords" content="contact Montessori school Chennai, International Kidz World address, Adambakkam play school contact, Montessori school phone number, preschool admissions Chennai, school location Adambakkam" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://internationalkidzworld.com/contact" />
+        <meta property="og:title" content="Contact International Kidz World Montessori Play School - Adambakkam, Chennai" />
+        <meta property="og:description" content="Visit us in Adambakkam, Chennai or call +91 98414 44842 for admissions and enquiries. Get directions and contact information." />
+        <meta property="og:image" content="https://internationalkidzworld.com/contact-og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Contact International Kidz World Montessori Play School - Adambakkam, Chennai" />
+        <meta property="twitter:description" content="Visit us in Adambakkam, Chennai or call +91 98414 44842 for admissions and enquiries. Get directions and contact information." />
+        
+        {/* Local Business Contact Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "mainEntity": {
+              "@type": "School",
+              "name": "International Kidz World Montessori Play School",
+              "telephone": "+91 98414 44842",
+              "email": "info@internationalkidzworld.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "No.135/112, Masthan Gori St, Balakrishnapuram",
+                "addressLocality": "Adambakkam",
+                "addressRegion": "Tamil Nadu",
+                "postalCode": "600088",
+                "addressCountry": "IN"
+              },
+              "openingHours": [
+                "Mo-Fr 08:00-17:00",
+                "Sa 08:00-13:00"
+              ]
+            }
+          })}
+        </script>
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://internationalkidzworld.com/contact" />
       </Helmet>
 
       <div className="min-h-screen pt-20">
@@ -110,92 +104,7 @@ const ContactPage = () => {
 
         <section className="py-16 bg-veryLightOrange">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-hotPink"
-              >
-                <div className="w-16 h-1 bg-gradient-to-r from-hotPink to-brightOrange mb-4 rounded-full"></div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-800">
-                  Send Us a Message
-                </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-hotPink focus:border-transparent bg-gray-50 text-gray-900 transition-all shadow-sm hover:shadow-md"
-                      placeholder="Enter your name"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brightOrange focus:border-transparent bg-gray-50 text-gray-900 transition-all shadow-sm hover:shadow-md"
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-vibrantPurple focus:border-transparent bg-gray-50 text-gray-900 transition-all shadow-sm hover:shadow-md"
-                      placeholder="+91 98765 43210"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-skyBlue focus:border-transparent bg-gray-50 text-gray-900 transition-all shadow-sm hover:shadow-md"
-                      placeholder="Tell us about your enquiry..."
-                      required
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-brightOrange to-hotPink text-white hover:scale-[1.02] transition-all shadow-lg border-none"
-                  >
-                    Send Message
-                  </Button>
-                </form>
-              </motion.div>
-
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -229,7 +138,7 @@ const ContactPage = () => {
                 ))}
 
                 <motion.a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919841444842"
                   target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
@@ -273,16 +182,32 @@ const ContactPage = () => {
               viewport={{ once: true }}
               className="rounded-3xl overflow-hidden shadow-2xl border-4 border-veryLightBlue"
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d80.2!3d13.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzAwLjAiTiA4MMKwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="International Kidz World Montessori Play School Location"
-              />
+              <div className="relative h-96">
+                {/* Official Google Maps iframe for International Kidz World */}
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7141622452796!2d80.20005617625623!3d12.990125187326928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52672b555d0293%3A0x4924aa688025b965!2sInternational%20Kidz%20World%20Montessori%20Play%20School!5e0!3m2!1sen!2sin!4v1773132260294!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="International Kidz World Montessori Play School Location"
+                />
+                
+                {/* Overlay button for direct Google Maps access */}
+                <div className="absolute top-4 right-4 z-10">
+                  <a
+                    href="https://maps.app.goo.gl/bM1CsuhAndJ2qnJY6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg text-vibrantPurple font-semibold hover:bg-white transition-all flex items-center gap-2"
+                  >
+                    <MapPin className="w-4 h-4" />
+                    View Larger Map
+                  </a>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
